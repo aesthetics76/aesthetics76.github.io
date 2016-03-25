@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>谈谈网站性能优化 | Aesthetics | 千里之行，始于切糕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="前端,面试">
+  <meta name="description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈网站性能优化">
+<meta property="og:url" content="localhost/2016/03/24/谈谈网站性能优化/index.html">
+<meta property="og:site_name" content="Aesthetics">
+<meta property="og:description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。">
+<meta property="og:updated_time" content="2016-03-25T06:51:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈网站性能优化">
+<meta name="twitter:description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。">
+  
+    <link rel="alternative" href="/atom.xml" title="Aesthetics" type="application/atom+xml">
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner">
+  <a href="javascript:;" class="header-icon waves-circle-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/sherlock.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Aesthetics</h5>
+        <a href="mailto:undefined" title="601246374@qq.com" class="mail">601246374@qq.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav">
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://github.com/aesthetics76" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="http://www.weibo.com/aesthetics76" target="_blank" >
+            <i class="icon icon-lg icon-weibo"></i>
+            Weibo
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-link"></i>
+            show
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>Aesthetics &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">谈谈网站性能优化</div>
+        
+        <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">谈谈网站性能优化</h1>
+    <h5 class="subtitle">2016-03-24</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-谈谈网站性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share" data-title="谈谈网站性能优化" data-pic="/img/sherlock.jpg" data-summary="&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h3&gt;&lt;p&gt;正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，&lt;strong&gt;更快的速度，更低的成本&lt;/strong&gt;，那么有哪些方法来实现呢。&lt;br&gt;" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#起因"><span class="post-toc-text">起因</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#雅虎军规"><span class="post-toc-text">雅虎军规</span></a></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" itemprop="postContent"><h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，<strong>更快的速度，更低的成本</strong>，那么有哪些方法来实现呢。<br><a id="more"></a></p>
+<h3 id="雅虎军规"><a href="#雅虎军规" class="headerlink" title="雅虎军规"></a>雅虎军规</h3><p>许多地方都提到了这个，但一查资料有的地方说是14条，有的又说是35条，我也有点迷糊，现在才知道，的确有35条，但大部分地方只介绍了常用的14条，但具体有哪些内容，以及背后是什么样的原理，需要来一一熟悉一下。</p>
+<ul>
+<li>尽可能的减少HTTP的请求数<br>实现方式：CSS文件，JS文件，图片文件，总的来说就是对这些东西来做文章，让我们尽量少找服务器要他们(减少请求)，方式就有许多了，CSS文件合并，JS文件合并，图片文件合并(Sprite图)，图标使用图标字体代替（既对性能有优化，又对交互十分友好）</li>
+<li>使用CDN<br>简单的解释就是，在离你最近的地方，放置一台系能好链接顺畅的副本服务器，让你能够以最近的距离，最快的速度获取内容。</li>
+<li>添加Expire/Cache-Control头</li>
+</ul>
+</div>
+
+            
+<nav class="post-nav flex-row">
+  <div class="flex-col waves-block prev">
+    
+      <a href="/2016/03/25/centos常用命令/" title="centos常用命令(不定期更新)" id="post-prev" class="post-nav-link">
+        <i class="icon icon-chevron-left"></i>
+        <span class="article-nav-title">上一篇</span>
+      </a>
+    
+  </div>
+  <div class="flex-col waves-block next">
+    
+  </div>
+
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="谈谈网站性能优化" data-title="谈谈网站性能优化" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<div class="global-share" id="global-share" data-title="谈谈网站性能优化" data-pic="/img/sherlock.jpg" data-summary="&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h3&gt;&lt;p&gt;正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，&lt;strong&gt;更快的速度，更低的成本&lt;/strong&gt;，那么有哪些方法来实现呢。&lt;br&gt;" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
