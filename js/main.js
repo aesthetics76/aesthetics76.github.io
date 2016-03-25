@@ -9,6 +9,8 @@
         menuOff = d.getElementById('menu-off'),
         menuShare = d.getElementById('menu-share'),
         loading = d.getElementById('loading'),
+        tag_link = d.getElementsByClassName('tag-list-link');
+		
         animate = w.requestAnimationFrame,
         ua = navigator.userAgent,
         isMD = ua.indexOf('Mobile') !== -1 || ua.indexOf('Android') !== -1 || ua.indexOf('iPhone') !== -1 || ua.indexOf('iPad') !== -1 || ua.indexOf('KFAPWI') !== -1,
@@ -169,7 +171,11 @@
         Blog.fixedHeader(top);
         Blog.fixedToc(top);
     }, false);
-
+	
+	for(var i = 0;i<tag_link.length;i++){
+		tag_link[i].setAttribute('data-hover', tag_link[i].innerHTML);
+	}
+	
     Waves.init();
     Waves.attach('.waves-button-light', ['waves-button', 'waves-light']);
     Waves.attach('.waves-circle-light', ['waves-circle', 'waves-light']);
