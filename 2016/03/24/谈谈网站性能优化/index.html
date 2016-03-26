@@ -7,16 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="前端,面试">
-  <meta name="description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。">
+  <meta name="description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。
+雅虎军规许多地方都提到了这个，但一查资料有的地方说是14条，有的又说是35条，我也有点迷糊，现在才知道，的确有35条，但大部分地方只介绍了常用的14条，但具体有哪些内容，以及背后是什么样的原理，需要来一一熟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谈谈网站性能优化">
 <meta property="og:url" content="localhost/2016/03/24/谈谈网站性能优化/index.html">
 <meta property="og:site_name" content="Aesthetics">
-<meta property="og:description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。">
-<meta property="og:updated_time" content="2016-03-25T06:51:23.000Z">
+<meta property="og:description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。
+雅虎军规许多地方都提到了这个，但一查资料有的地方说是14条，有的又说是35条，我也有点迷糊，现在才知道，的确有35条，但大部分地方只介绍了常用的14条，但具体有哪些内容，以及背后是什么样的原理，需要来一一熟">
+<meta property="og:image" content="localhost/./1458911389132.png">
+<meta property="og:updated_time" content="2016-03-26T09:24:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈网站性能优化">
-<meta name="twitter:description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。">
+<meta name="twitter:description" content="起因正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，更快的速度，更低的成本，那么有哪些方法来实现呢。
+雅虎军规许多地方都提到了这个，但一查资料有的地方说是14条，有的又说是35条，我也有点迷糊，现在才知道，的确有35条，但大部分地方只介绍了常用的14条，但具体有哪些内容，以及背后是什么样的原理，需要来一一熟">
+<meta name="twitter:image" content="localhost/./1458911389132.png">
   
     <link rel="alternative" href="/atom.xml" title="Aesthetics" type="application/atom+xml">
   
@@ -133,7 +138,7 @@
         <aside class="post-widget" id="post-widget">
 
           
-          <div class="post-share" id="post-share" data-title="谈谈网站性能优化" data-pic="/img/sherlock.jpg" data-summary="&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h3&gt;&lt;p&gt;正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，&lt;strong&gt;更快的速度，更低的成本&lt;/strong&gt;，那么有哪些方法来实现呢。&lt;br&gt;" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html">
+          <div class="post-share" id="post-share" data-title="谈谈网站性能优化" data-pic="/img/sherlock.jpg" data-summary="null" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
@@ -173,19 +178,33 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#起因"><span class="post-toc-text">起因</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#雅虎军规"><span class="post-toc-text">雅虎军规</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#起因"><span class="post-toc-text">起因</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#雅虎军规"><span class="post-toc-text">雅虎军规</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览器自身潜力"><span class="post-toc-text">浏览器自身潜力</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#js-html交互相关"><span class="post-toc-text">js/html交互相关</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其它一些不常见的"><span class="post-toc-text">其它一些不常见的</span></a></li></ol>
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"><h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，<strong>更快的速度，更低的成本</strong>，那么有哪些方法来实现呢。<br><a id="more"></a></p>
+            <div class="post-content" itemprop="postContent"><h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，<strong>更快的速度，更低的成本</strong>，那么有哪些方法来实现呢。</p>
 <h3 id="雅虎军规"><a href="#雅虎军规" class="headerlink" title="雅虎军规"></a>雅虎军规</h3><p>许多地方都提到了这个，但一查资料有的地方说是14条，有的又说是35条，我也有点迷糊，现在才知道，的确有35条，但大部分地方只介绍了常用的14条，但具体有哪些内容，以及背后是什么样的原理，需要来一一熟悉一下。</p>
 <ul>
-<li>尽可能的减少HTTP的请求数<br>实现方式：CSS文件，JS文件，图片文件，总的来说就是对这些东西来做文章，让我们尽量少找服务器要他们(减少请求)，方式就有许多了，CSS文件合并，JS文件合并，图片文件合并(Sprite图)，图标使用图标字体代替（既对性能有优化，又对交互十分友好）</li>
-<li>使用CDN<br>简单的解释就是，在离你最近的地方，放置一台系能好链接顺畅的副本服务器，让你能够以最近的距离，最快的速度获取内容。</li>
-<li>添加Expire/Cache-Control头</li>
+<li><strong>尽可能的减少HTTP的请求数</strong><br>实现方式：CSS文件，JS文件，图片文件，总的来说就是对这些东西来做文章，让我们尽量少找服务器要他们(减少请求)，方式就有许多了，CSS文件合并，JS文件合并，图片文件合并(Sprite图)，图标使用图标字体代替（既对性能有优化，又对交互十分友好）</li>
+<li><strong>使用CDN</strong><br>简单的解释就是，在离你最近的地方，放置一台系能好链接顺畅的副本服务器，让你能够以最近的距离，最快的速度获取内容。</li>
+<li>添加Expire/Cache-Control头<br>主要原理是为浏览器设置缓存，具体参数与用法，会在另一篇博文里详细解释。</li>
+<li><strong>CSS文件放头部，JS放尾部</strong><br>这个原因就不说了吧，属于前端常识</li>
+<li><strong>把JS和CSS放到外部文件中</strong><br>这点要视情况而定了，如果CSS文件与JS文件只作用于一个页面，比如微信里面单页插件的开发，把JS和CSS放在页面中比提取到单独文件里要好一些。一方面减少了请求数，另一方面也避免了缓存的问题。但是不利于维护这是必然的</li>
+<li><strong>避免空的<img></strong><br>避免写空的图片标签，每个空的<code>&lt;img&gt;</code>标签都会向服务器发送一个请求</li>
+<li><strong>避免缩放图片</strong><br>尽量使用原始尺寸的图片，缩放会使得页面重绘，降低性能</li>
+<li><strong>使用Ajax缓存</strong><br>Ajax是网站里很常用的一种技术，有两种向服务器发送请求的方法<strong>POST</strong>和<strong>GET</strong>,其中POST请求会<strong>每次</strong>都向服务器发送请求，而GET则对同一地址不会重复执行，也就是会缓存。需要根据实际情况选择请求方式，下面也贴出<strong>POST</strong>请求与<strong>GET</strong>请求的区别<br><img src="./1458911389132.png" alt="Alt text"><h3 id="浏览器自身潜力"><a href="#浏览器自身潜力" class="headerlink" title="浏览器自身潜力"></a>浏览器自身潜力</h3></li>
+<li><code>ol</code>列表的数字、table的自适应布局</li>
+<li><code>&lt;strong&gt;</code> <code>&lt;h1-6&gt;</code>粗体效果</li>
+<li><code>form</code>相关特性，元素自身特性实现submit以及reset等效果</li>
+<li>HTML5 <code>placeholder</code>以及其它N多现代浏览器支持特性等</li>
+<li>localStorage本地存储与优化<h3 id="js-html交互相关"><a href="#js-html交互相关" class="headerlink" title="js/html交互相关"></a>js/html交互相关</h3></li>
+<li>特殊的JS资源在使用的时候才异步加载(如显示地图等)</li>
+<li>无关紧要的资源避开渲染高峰显示<h3 id="其它一些不常见的"><a href="#其它一些不常见的" class="headerlink" title="其它一些不常见的"></a>其它一些不常见的</h3></li>
+<li>cookie-free domain，当浏览器请求一个静态图片并发送<br>Cookie时。Cookie根本就没必要通过网络传输。为了解决这个问题，应当创建一个子域并将静态内存放在上面，以确保静态内容都是通过cookie-free的方式访问的。(只是看到过，还有待实践)</li>
+<li>webp格式的图片，详细介绍可以看看这篇文章<a href="http://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">WebP探寻之路</a></li>
 </ul>
 </div>
 
@@ -247,7 +266,7 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<div class="global-share" id="global-share" data-title="谈谈网站性能优化" data-pic="/img/sherlock.jpg" data-summary="&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h3&gt;&lt;p&gt;正值实习面试季，许多面筋上都提到一个必问的问题，网站的性能优化，在此便来进行一下梳理，整理一下网站优化的要点。提升网站性能的目的无非是两点，&lt;strong&gt;更快的速度，更低的成本&lt;/strong&gt;，那么有哪些方法来实现呢。&lt;br&gt;" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html">
+<div class="global-share" id="global-share" data-title="谈谈网站性能优化" data-pic="/img/sherlock.jpg" data-summary="null" data-url="localhost/2016/03/24/谈谈网站性能优化/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
