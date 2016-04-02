@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>三种三栏布局的实现 | Aesthetics | 千里之行，始于切糕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="前端">
+  <meta name="description" content="腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅
+
+限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三种三栏布局的实现">
+<meta property="og:url" content="localhost/2016/04/02/三栏布局/index.html">
+<meta property="og:site_name" content="Aesthetics">
+<meta property="og:description" content="腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅
+
+限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应">
+<meta property="og:updated_time" content="2016-04-02T07:02:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三种三栏布局的实现">
+<meta name="twitter:description" content="腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅
+
+限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应">
+  
+    <link rel="alternative" href="/atom.xml" title="Aesthetics" type="application/atom+xml">
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner">
+  <a href="javascript:;" class="header-icon waves-circle-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/sherlock.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Aesthetics</h5>
+        <a href="mailto:undefined" title="601246374@qq.com" class="mail">601246374@qq.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav">
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="https://github.com/aesthetics76" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="http://www.weibo.com/aesthetics7" target="_blank" >
+            <i class="icon icon-lg icon-weibo"></i>
+            Weibo
+          </a>
+        </li>
+    
+        <li class="waves-block">
+          <a href="/"  >
+            <i class="icon icon-lg icon-link"></i>
+            show
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>Aesthetics &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-circle-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">三种三栏布局的实现</div>
+        
+        <a href="javascript:;" class="header-icon waves-circle-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">三种三栏布局的实现</h1>
+    <h5 class="subtitle">2016-04-02</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-三栏布局" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share" data-title="三种三栏布局的实现" data-pic="/img/sherlock.jpg" data-summary="&lt;p&gt;腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应&lt;br&gt;" data-url="localhost/2016/04/02/三栏布局/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绝对定位法"><span class="post-toc-text">绝对定位法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#margin负值法"><span class="post-toc-text">margin负值法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自身浮动法"><span class="post-toc-text">自身浮动法</span></a></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" itemprop="postContent"><p>腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅</p>
+<blockquote>
+<p>限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应<br><a id="more"></a></p>
+<h3 id="绝对定位法"><a href="#绝对定位法" class="headerlink" title="绝对定位法"></a>绝对定位法</h3><p>代码如下<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset="UTF-8"&gt;</span><br><span class="line">	&lt;title&gt;三栏布局&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html,body&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		.left,.right&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			height: 100%;</span><br><span class="line">			background-color: yellow;</span><br><span class="line">			top: 0;</span><br><span class="line">			width: 200px;</span><br><span class="line">		&#125;</span><br><span class="line">		.left&#123;</span><br><span class="line">			left: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.right&#123;</span><br><span class="line">			right: 0;	</span><br><span class="line">		&#125;</span><br><span class="line">		.main&#123;</span><br><span class="line">			margin: 0 200px;</span><br><span class="line">			height: 100%;</span><br><span class="line">			background: red;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class="left"&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class="main"&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class="right"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>左中右三个<code>&lt;div&gt;</code>顺序可以任意调整</p>
+<ul>
+<li>优点：理解容易，写起来也简单，受内部元素影响的概率较低</li>
+<li>缺点：中间栏如果有<code>min-width</code>属性，或者含有固定宽度的内部元素，浏览器缩小之后内容会发生重叠，不过可以通过媒体查询避免这种情况。<h3 id="margin负值法"><a href="#margin负值法" class="headerlink" title="margin负值法"></a>margin负值法</h3>代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;三栏布局&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html,body&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			height: 100%;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.main&#123;</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">			float: left;</span><br><span class="line">		&#125;</span><br><span class="line">		.main .body&#123;			</span><br><span class="line">			height: 100%;		</span><br><span class="line">			margin: 0 210px;</span><br><span class="line">			background-color: red;</span><br><span class="line">		&#125;</span><br><span class="line">		.left,.right&#123;</span><br><span class="line">			width: 200px;</span><br><span class="line">			height: 100%;</span><br><span class="line">			float: left;			</span><br><span class="line">		&#125;</span><br><span class="line">		.left&#123;</span><br><span class="line">			margin-left: -100%;	</span><br><span class="line">			background-color: yellow;		</span><br><span class="line">		&#125;</span><br><span class="line">		.right&#123;</span><br><span class="line">			margin-left: -200px;</span><br><span class="line">			background-color: yellow;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;main&quot;&gt;</span><br><span class="line">		&lt;div class=&quot;body&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>三个<code>&lt;div&gt;</code>的顺序不可随意改变<br>优点：三栏相互关联，是真正的自适应，布局不易受内部影响<br>缺点：比较难理解，出现bug不易排查</p>
+<h3 id="自身浮动法"><a href="#自身浮动法" class="headerlink" title="自身浮动法"></a>自身浮动法</h3><p>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;三栏布局&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html,body&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			height: 100%;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.left,.right&#123;</span><br><span class="line">			width: 200px;		</span><br><span class="line">			height: 100%;</span><br><span class="line">			background-color: red;</span><br><span class="line">		&#125;</span><br><span class="line">		.main&#123;</span><br><span class="line">			height: 100%;</span><br><span class="line">			margin: 0 210px;</span><br><span class="line">			background-color: yellow;			</span><br><span class="line">		&#125;</span><br><span class="line">		.left&#123;</span><br><span class="line">			float: left;</span><br><span class="line">		&#125;</span><br><span class="line">		.right&#123;</span><br><span class="line">			float: right;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;main&quot;&gt;&lt;/div&gt;	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>中间栏的<code>&lt;div&gt;</code>需要放到最后面<br>优点：代码简介明了<br>缺点：在中间栏中不可使用<code>clear：both</code></p>
+</div>
+
+            
+<nav class="post-nav flex-row">
+  <div class="flex-col waves-block prev">
+    
+  </div>
+  <div class="flex-col waves-block next">
+    
+      <a href="/2016/03/25/centos常用命令/" title="centos常用命令(不定期更新)" id="post-next" class="post-nav-link">
+        <span class="article-nav-title">下一篇</span>
+        <i class="icon icon-chevron-right"></i>
+      </a>
+    
+  </div>
+
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="三栏布局" data-title="三种三栏布局的实现" data-url="localhost/2016/04/02/三栏布局/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-circle-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<div class="global-share" id="global-share" data-title="三种三栏布局的实现" data-pic="/img/sherlock.jpg" data-summary="&lt;p&gt;腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应&lt;br&gt;" data-url="localhost/2016/04/02/三栏布局/index.html">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1258202975' style='display:none' %3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1258202975%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>
