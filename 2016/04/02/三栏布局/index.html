@@ -17,7 +17,7 @@
 <meta property="og:description" content="腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅
 
 限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应">
-<meta property="og:updated_time" content="2016-04-02T07:02:57.000Z">
+<meta property="og:updated_time" content="2016-04-02T07:07:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三种三栏布局的实现">
 <meta name="twitter:description" content="腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅
@@ -141,7 +141,8 @@
           
           <div class="post-share" id="post-share" data-title="三种三栏布局的实现" data-pic="/img/sherlock.jpg" data-summary="&lt;p&gt;腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应&lt;br&gt;" data-url="localhost/2016/04/02/三栏布局/index.html">
+&lt;p&gt;限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应&lt;/p&gt;
+&lt;/blockquote&gt;" data-url="localhost/2016/04/02/三栏布局/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
@@ -190,9 +191,10 @@
 
             <div class="post-content" itemprop="postContent"><p>腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅</p>
 <blockquote>
-<p>限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应<br><a id="more"></a></p>
-<h3 id="绝对定位法"><a href="#绝对定位法" class="headerlink" title="绝对定位法"></a>绝对定位法</h3><p>代码如下<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset="UTF-8"&gt;</span><br><span class="line">	&lt;title&gt;三栏布局&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html,body&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		.left,.right&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			height: 100%;</span><br><span class="line">			background-color: yellow;</span><br><span class="line">			top: 0;</span><br><span class="line">			width: 200px;</span><br><span class="line">		&#125;</span><br><span class="line">		.left&#123;</span><br><span class="line">			left: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.right&#123;</span><br><span class="line">			right: 0;	</span><br><span class="line">		&#125;</span><br><span class="line">		.main&#123;</span><br><span class="line">			margin: 0 200px;</span><br><span class="line">			height: 100%;</span><br><span class="line">			background: red;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class="left"&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class="main"&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class="right"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应</p>
 </blockquote>
+<a id="more"></a>
+<h3 id="绝对定位法"><a href="#绝对定位法" class="headerlink" title="绝对定位法"></a>绝对定位法</h3><p>代码如下<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset="UTF-8"&gt;</span><br><span class="line">	&lt;title&gt;三栏布局&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html,body&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		.left,.right&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			height: 100%;</span><br><span class="line">			background-color: yellow;</span><br><span class="line">			top: 0;</span><br><span class="line">			width: 200px;</span><br><span class="line">		&#125;</span><br><span class="line">		.left&#123;</span><br><span class="line">			left: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.right&#123;</span><br><span class="line">			right: 0;	</span><br><span class="line">		&#125;</span><br><span class="line">		.main&#123;</span><br><span class="line">			margin: 0 200px;</span><br><span class="line">			height: 100%;</span><br><span class="line">			background: red;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class="left"&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class="main"&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class="right"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 <p>左中右三个<code>&lt;div&gt;</code>顺序可以任意调整</p>
 <ul>
 <li>优点：理解容易，写起来也简单，受内部元素影响的概率较低</li>
@@ -264,7 +266,8 @@
 
 <div class="global-share" id="global-share" data-title="三种三栏布局的实现" data-pic="/img/sherlock.jpg" data-summary="&lt;p&gt;腾讯笔试以及网易笔试中均考到了两栏布局与三栏布局相关问题，这里记下三种三栏自适应布局的方式，以便随时查阅&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应&lt;br&gt;" data-url="localhost/2016/04/02/三栏布局/index.html">
+&lt;p&gt;限定布局结构为：左中右三栏布局，左右两栏宽度固定（不固定改成百分比即可），中间栏宽度自适应&lt;/p&gt;
+&lt;/blockquote&gt;" data-url="localhost/2016/04/02/三栏布局/index.html">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
